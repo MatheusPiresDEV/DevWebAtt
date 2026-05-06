@@ -1,0 +1,23 @@
+.t{
+    background-color: #d48b00;
+    color: white;
+}
+hr{
+    border-top: #d48b00 dashed;
+}
+
+body{
+    margin-left: 160px;
+    background-color: #fff6d8;
+    background-image: url(..//assets/cabecalhos_back.png);
+    background-repeat: repeat-y ;
+}
+h1{
+    color:  #906718;
+}
+h2{
+    color:  #906718;
+}
+p{
+    margin-left: 10px;
+}
