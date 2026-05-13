@@ -1,0 +1,35 @@
+h2{
+    background-color: #7faeb7;;
+}
+hr{
+    color: #7faeb7;
+    height: 3px;
+    background-color: #7faeb7;
+}
+a{
+    color:  #004552;
+}
+a:hover{
+    color: #ffa700;
+}
+body{
+    font-weight: bold;
+}
+.i:hover{
+    border-color: #ffa700;
+    border-width: 10px;
+    border-style: solid;
+}
+.m:hover{
+    border-color: #ffa700;
+    border-width: 10px;
+    border-style: solid;
+}
+.g:hover{
+    border-color: #ffa700;
+    border-width: 10px;
+    border-style: solid;
+}
+.Geral{
+    display: flex;
+}
