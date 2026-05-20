@@ -1,0 +1,72 @@
+h1 {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: #909;
+}
+
+hr {
+  border-color: blueviolet;
+}
+
+fieldset {
+  border-color: burlywood;
+  margin-bottom: 20px;
+}
+
+.grupo-campos {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.linha-formulario {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.linha-formulario label {
+  width: 60px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  max-width: 850px;
+  height: 25px;
+  padding: 0 15px;
+  font-size: 18px;
+  border: 1px solid #ccc;
+  background-color: #fcc;
+  box-sizing: border-box;
+  background-color: #fcc;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  background-color: #fcc;
+  border-color: #1890ff;
+  outline: none;
+}
+.btn input[type="button"] {
+  background-color: #fcc;
+  color: black;
+  cursor: pointer;
+  border: none;
+  width: 10%;
+  height: 10%;
+}
+body {
+  width: 70%;
+  margin: auto;
+}
+fieldset {
+  border: solid #fcc;
+}
+img{
+    float: left;
+}

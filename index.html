@@ -15,12 +15,19 @@
           <div class="brand__mark" aria-hidden="true">D</div>
           <div>
             <h1 class="brand__title">DevWebAtt</h1>
-            <p class="brand__subtitle">Página central com links para cada exercício</p>
+            <p class="brand__subtitle">
+              Página central com links para cada exercício
+            </p>
           </div>
         </div>
 
         <div class="topbar__actions">
-          <button id="themeToggle" class="btn btn--ghost" type="button" aria-pressed="false">
+          <button
+            id="themeToggle"
+            class="btn btn--ghost"
+            type="button"
+            aria-pressed="false"
+          >
             Alternar tema
           </button>
         </div>
@@ -32,8 +39,9 @@
         <div class="hero__text">
           <h2 class="hero__title">Bem-vindo</h2>
           <p class="hero__description">
-            Esta página lista os exercícios disponíveis nas pastas <code>EX01</code>, <code>EX02</code>, <code>EX03</code>...
-            Use a busca para encontrar rapidamente.
+            Esta página lista os exercícios disponíveis nas pastas
+            <code>EX01</code>, <code>EX02</code>, <code>EX03</code>... Use a
+            busca para encontrar rapidamente.
           </p>
         </div>
 
@@ -53,80 +61,127 @@
       </section>
 
       <section class="grid" aria-label="Exercícios">
-        <article class="card" data-title="EX01" data-tags="semantica headings" tabindex="0">
+        <article
+          class="card"
+          data-title="EX01"
+          data-tags="semantica headings"
+          tabindex="0"
+        >
           <div class="card__top">
             <span class="pill">EX01</span>
             <span class="status">Concluído</span>
           </div>
-          <h3 class="card__title">Aprendendo a trabalhar com títulos (headings)</h3>
-          <p class="card__desc">Estrutura semântica com H1, H2, parágrafos e boas práticas de hierarquia.</p>
+          <h3 class="card__title">
+            Aprendendo a trabalhar com títulos (headings)
+          </h3>
+          <p class="card__desc">
+            Estrutura semântica com H1, H2, parágrafos e boas práticas de
+            hierarquia.
+          </p>
           <div class="card__actions">
             <a class="btn" href="./EX01/">Abrir exercício</a>
           </div>
         </article>
 
-        <article class="card" data-title="EX02" data-tags="html organizacao paragrafos imagens" tabindex="0">
+        <article
+          class="card"
+          data-title="EX02"
+          data-tags="html organizacao paragrafos imagens"
+          tabindex="0"
+        >
           <div class="card__top">
             <span class="pill pill--alt">EX02</span>
             <span class="status">Concluído</span>
           </div>
           <h3 class="card__title">Estudando HTML</h3>
-          <p class="card__desc">Organização, parágrafos, quebras de linha e uso de imagens.</p>
+          <p class="card__desc">
+            Organização, parágrafos, quebras de linha e uso de imagens.
+          </p>
           <div class="card__actions">
             <a class="btn" href="./EX02/">Abrir exercício</a>
           </div>
         </article>
 
-        <article class="card" data-title="EX03" data-tags="links imagens" tabindex="0">
+        <article
+          class="card"
+          data-title="EX03"
+          data-tags="links imagens"
+          tabindex="0"
+        >
           <div class="card__top">
             <span class="pill">EX03</span>
             <span class="status">Concluído</span>
           </div>
           <h3 class="card__title">Trabalhando com links</h3>
-          <p class="card__desc">Links em texto e em imagens, com botões gráficos para navegação.</p>
+          <p class="card__desc">
+            Links em texto e em imagens, com botões gráficos para navegação.
+          </p>
           <div class="card__actions">
             <a class="btn" href="./EX03/">Abrir exercício</a>
+          </div>
+        </article>
+
+        <article
+          class="card"
+          data-title="EX03"
+          data-tags="links imagens"
+          tabindex="0"
+        >
+          <div class="card__top">
+            <span class="pill">Atividade do dia 19/05/2026 - PT 1</span>
+            <span class="status">Concluído</span>
+          </div>
+          <h3 class="card__title">Trabalhando com recriação de uma pagina de cadastro</h3>
+          <p class="card__desc">
+            Atividade PT 1
+          </p>
+          <div class="card__actions">
+            <a class="btn" href="./Proposta/index.html">Abrir exercício</a>
           </div>
         </article>
       </section>
 
       <footer class="footer">
         <p>
-          Dica: para adicionar mais exercícios, crie uma nova pasta <code>EX04</code> (por exemplo) e inclua o novo card na lista.
+          Dica: para adicionar mais exercícios, crie uma nova pasta
+          <code>EX04</code> (por exemplo) e inclua o novo card na lista.
         </p>
       </footer>
     </main>
 
     <script>
-      const themeToggle = document.getElementById('themeToggle');
+      const themeToggle = document.getElementById("themeToggle");
       const root = document.documentElement;
 
       function setTheme(theme) {
-        if (theme === 'dark') {
-          root.setAttribute('data-theme', 'dark');
-          themeToggle.setAttribute('aria-pressed', 'true');
+        if (theme === "dark") {
+          root.setAttribute("data-theme", "dark");
+          themeToggle.setAttribute("aria-pressed", "true");
         } else {
-          root.setAttribute('data-theme', 'light');
-          themeToggle.setAttribute('aria-pressed', 'false');
+          root.setAttribute("data-theme", "light");
+          themeToggle.setAttribute("aria-pressed", "false");
         }
-        localStorage.setItem('theme', theme);
+        localStorage.setItem("theme", theme);
       }
 
-      const saved = localStorage.getItem('theme');
-      if (saved === 'dark') setTheme('dark');
+      const saved = localStorage.getItem("theme");
+      if (saved === "dark") setTheme("dark");
 
-      themeToggle.addEventListener('click', () => {
-        const current = root.getAttribute('data-theme') || 'light';
-        setTheme(current === 'dark' ? 'light' : 'dark');
+      themeToggle.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") || "light";
+        setTheme(current === "dark" ? "light" : "dark");
       });
 
       // Busca
-      const search = document.getElementById('search');
-      const cards = Array.from(document.querySelectorAll('.card'));
-      const resultsInfo = document.getElementById('resultsInfo');
+      const search = document.getElementById("search");
+      const cards = Array.from(document.querySelectorAll(".card"));
+      const resultsInfo = document.getElementById("resultsInfo");
 
       function normalize(s) {
-        return (s || '').toLowerCase().normalize('NFD').replace(/\p{Diacritic}/gu, '');
+        return (s || "")
+          .toLowerCase()
+          .normalize("NFD")
+          .replace(/\p{Diacritic}/gu, "");
       }
 
       function filterCards() {
@@ -138,19 +193,19 @@
           const tags = normalize(card.dataset.tags);
           const text = normalize(card.textContent);
 
-          const match = !q || title.includes(q) || tags.includes(q) || text.includes(q);
-          card.style.display = match ? '' : 'none';
+          const match =
+            !q || title.includes(q) || tags.includes(q) || text.includes(q);
+          card.style.display = match ? "" : "none";
           if (match) shown++;
         }
 
         resultsInfo.textContent = q
           ? `${shown} resultado(s) para "${search.value}".`
-          : '';
+          : "";
       }
 
-      search.addEventListener('input', filterCards);
+      search.addEventListener("input", filterCards);
       filterCards();
     </script>
   </body>
 </html>
-
