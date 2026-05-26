@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especificidade 1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <p><a href="../../index.html" style="color: #000; text-decoration: none; font-size: 14px;">&larr; Voltar ao Menu</a></p>
+    <br>
+
+    <h2>Carros</h2>
+    <ul>
+        <li>carro 1</li>
+        <li>carro 2</li>
+        <li>carro 3</li>
+        <li>carro 4</li>
+    </ul>
+
+    <h2>Acessórios</h2>
+    <ul class="acessorios">
+        <li class="novo">acessório 1</li>
+        <li class="novo">acessório 2</li>
+        <li>acessório 3</li>
+        <li>acessório 4</li>
+    </ul>
+
+    <h2>Itens obrigatórios</h2>
+    <ul id="obrigatorio">
+        <li>item 1</li>
+        <li>item 2</li>
+        <li style="color: #ff0000;">item 3 - superobrigatório</li>
+        <li>item 4</li>
+    </ul>
+
+    <hr>
+
+    <h3>Legenda de cores:</h3>
+    
+    <p>azul escuro<br><span>- elemento: li</span></p>
+    <p>azul claro<br><span>- classe + elemento: .acessorios li</span></p>
+    <p>rosa<br><span>- classe: .novo (não é específico o suficiente para aparecer)</span></p>
+    <p>laranja<br><span>- elemento + classe: li.novo</span></p>
+    <p>verde<br><span>- ID + elemento: #obrigatorio li</span></p>
+    <p>vermelho<br><span>- estilo inline</span></p>
+
+</body>
+</html>
