@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Times New Roman", Times, serif;
+    line-height: 1.2;
+    padding: 50px 70px;
+    background-color: #fff;
+    color: #000;
+}
+
+h1 {
+    font-size: 42px;
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+
+.content {
+    max-width: 800px;
+}
+
+.content p {
+    font-size: 20px;
+    margin-bottom: 30px;
+    text-align: left;
+}
+
+blockquote {
+    position: relative;
+    margin: 40px auto;
+    width: max-content;
+    padding: 0 60px;
+}
+
+blockquote p {
+    font-size: 20px;
+    line-height: 1.2;
+    margin-bottom: 0;
+    text-align: left;
+}
+
+blockquote::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    left: 0;
+    top: -20px;
+}
+
+blockquote::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    right: 0;
+    bottom: -20px;
+}
+
+.quote-purple::before {
+    background-image: url("/assets/abre_aspas.gif");
+}
+
+.quote-purple::after {
+    background-image: url("/assets/fecha_aspas.gif");
+}
+
+.quote-orange::before {
+    background-image: url("/assets/abre_aspas2.gif");
+}
+
+.quote-orange::after {
+    background-image: url("/assets/fecha_aspas2.gif");
+}
