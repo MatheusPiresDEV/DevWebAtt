@@ -60,111 +60,114 @@
         </div>
       </section>
 
-      <section class="grid" aria-label="Exercícios">
-        <article
-          class="card"
-          data-title="EX01"
-          data-tags="semantica headings"
-          tabindex="0"
-        >
-          <div class="card__top">
-            <span class="pill">EX01</span>
-            <span class="status">Concluído</span>
-          </div>
-          <h3 class="card__title">
-            Aprendendo a trabalhar com títulos (headings)
-          </h3>
-          <p class="card__desc">
-            Estrutura semântica com H1, H2, parágrafos e boas práticas de
-            hierarquia.
-          </p>
-          <div class="card__actions">
-            <a class="btn" href="./EX01/">Abrir exercício</a>
-          </div>
-        </article>
+      <section class="carousel" aria-label="Carrossel de atividades">
+        <div class="carousel__viewport" role="region" aria-roledescription="carrossel" aria-live="polite">
+          <div class="carousel__track" id="carouselTrack">
+            <article class="card card--slide" data-title="EX01" data-tags="semantica headings estrutura acessibilidade" tabindex="0">
+              <div class="card__top">
+                <span class="pill">EX01</span>
+                <span class="status">Concluído</span>
+              </div>
+              <h3 class="card__title">Aprendendo a trabalhar com títulos (headings)</h3>
+              <p class="card__desc">Estrutura semântica com H1, H2, parágrafos e boas práticas de hierarquia.</p>
+              <div class="card__actions">
+                <a class="btn" href="./EX01/">Abrir exercício</a>
+              </div>
+            </article>
 
-        <article
-          class="card"
-          data-title="EX02"
-          data-tags="html organizacao paragrafos imagens"
-          tabindex="0"
-        >
-          <div class="card__top">
-            <span class="pill pill--alt">EX02</span>
-            <span class="status">Concluído</span>
-          </div>
-          <h3 class="card__title">Estudando HTML</h3>
-          <p class="card__desc">
-            Organização, parágrafos, quebras de linha e uso de imagens.
-          </p>
-          <div class="card__actions">
-            <a class="btn" href="./EX02/">Abrir exercício</a>
-          </div>
-        </article>
+            <article class="card card--slide" data-title="EX02" data-tags="html organizacao paragrafos imagens" tabindex="0">
+              <div class="card__top">
+                <span class="pill pill--alt">EX02</span>
+                <span class="status">Concluído</span>
+              </div>
+              <h3 class="card__title">Estudando HTML</h3>
+              <p class="card__desc">Organização, parágrafos, quebras de linha e uso de imagens.</p>
+              <div class="card__actions">
+                <a class="btn" href="./EX02/">Abrir exercício</a>
+              </div>
+            </article>
 
-        <article
-          class="card"
-          data-title="EX03"
-          data-tags="links imagens"
-          tabindex="0"
-        >
-          <div class="card__top">
-            <span class="pill">EX03</span>
-            <span class="status">Concluído</span>
-          </div>
-          <h3 class="card__title">Trabalhando com links</h3>
-          <p class="card__desc">
-            Links em texto e em imagens, com botões gráficos para navegação.
-          </p>
-          <div class="card__actions">
-            <a class="btn" href="./EX03/">Abrir exercício</a>
-          </div>
-        </article>
+            <article class="card card--slide" data-title="EX03" data-tags="links imagens ancora target rel" tabindex="0">
+              <div class="card__top">
+                <span class="pill">EX03</span>
+                <span class="status">Concluído</span>
+              </div>
+              <h3 class="card__title">Trabalhando com links</h3>
+              <p class="card__desc">Links em texto e em imagens, com navegação e boas práticas (rel noopener).</p>
+              <div class="card__actions">
+                <a class="btn" href="./EX03/">Abrir exercício</a>
+              </div>
+            </article>
 
-        <article
-          class="card"
-          data-title="EX03"
-          data-tags="links imagens"
-          tabindex="0"
-        >
-          <div class="card__top">
-            <span class="pill">Atividade do dia 19/05/2026 - PT 1</span>
-            <span class="status">Concluído</span>
+            <article class="card card--slide" data-title="PT1" data-tags="formulario cadastro proposta fieldset legend inputs" tabindex="0">
+              <div class="card__top">
+                <span class="pill">PT 1</span>
+                <span class="status">Concluído</span>
+              </div>
+              <h3 class="card__title">Recriação de uma página de cadastro</h3>
+              <p class="card__desc">Estrutura de formulário com fieldset, legend e inputs.</p>
+              <div class="card__actions">
+                <a class="btn" href="./Proposta/index.html">Abrir exercício</a>
+              </div>
+            </article>
+
+            <article class="card card--slide" data-title="Table" data-tags="tabela th td rowspan colspan thead tbody tfoot html" tabindex="0">
+              <div class="card__top">
+                <span class="pill">Tabela</span>
+                <span class="status">Concluído</span>
+              </div>
+              <h3 class="card__title">Recriação de uma página de tabela</h3>
+              <p class="card__desc">Uso de <code>thead</code>, <code>tbody</code>, <code>tfoot</code> e mesclagem com <code>rowspan</code>/<code>colspan</code>.</p>
+              <div class="card__actions">
+                <a class="btn" href="./Table/index.html">Abrir exercício</a>
+              </div>
+            </article>
+
+            <article class="card card--slide" data-title="EX04" data-tags="listas nested ul ol receita torta limão" tabindex="0">
+              <div class="card__top">
+                <span class="pill">EX04</span>
+                <span class="status">Concluído</span>
+              </div>
+              <h3 class="card__title">Lista encadeada: receita em níveis</h3>
+              <p class="card__desc">Estrutura de conteúdo com listas aninhadas e hierarquia visual.</p>
+              <div class="card__actions">
+                <a class="btn" href="./EX04/">Abrir exercício</a>
+              </div>
+            </article>
+
+            <article class="card card--slide" data-title="DesignResponsivo" data-tags="css responsivo cascata especificidade heranca position ron mueck" tabindex="0">
+              <div class="card__top">
+                <span class="pill pill--alt">Design</span>
+                <span class="status">Concluído</span>
+              </div>
+              <h3 class="card__title">Atividades de Design Responsivo (UC 5)</h3>
+              <p class="card__desc">Acesse o índice principal com todos os links: cascata, especificidade, responsividade e exemplos com imagens.</p>
+              <div class="card__actions">
+                <a class="btn" href="./DesignResponsivo/cascata-especificidade-heranca%20e%20position/index.html">Abrir índice</a>
+              </div>
+            </article>
           </div>
-          <h3 class="card__title">Trabalhando com recriação de uma pagina de cadastro</h3>
-          <p class="card__desc">
-            Atividade PT 1
-          </p>
-          <div class="card__actions">
-            <a class="btn" href="./Proposta/index.html">Abrir exercício</a>
-          </div>
-        </article>
+        </div>
+
+        <div class="carousel__dots" id="carouselDots" aria-hidden="true"></div>
+
+        <p class="carousel__hint" id="carouselHint">
+          Dica: use <kbd>←</kbd> e <kbd>→</kbd> ou aguarde a rotação automática.
+        </p>
+
+        <section class="carousel__details" aria-label="Lista de atividades">
+          <h3 class="section-title">Atividades (o que cada uma faz)</h3>
+          <ul class="details-list" id="activityList"></ul>
+        </section>
       </section>
 
       <footer class="footer">
-
-        <div class="card__top">
-            <span class="pill">Tabela</span>
-            <span class="status">Concluído</span>
-          </div>
-          <h3 class="card__title">Trabalhando com recriação de uma pagina de Tabela</h3>
-          <p class="card__desc">
-            Atividade PT 2
-          </p>
-          <div class="card__actions">
-            <a class="btn" href="./Table/index.html">Abrir exercício</a>
-          </div>
-        </article>
-      </section>
-
-      <footer class="footer">
-
         <p>
-          Dica: para adicionar mais exercícios, crie uma nova pasta
-          <code>EX04</code> (por exemplo) e inclua o novo card na lista.
+          Para adicionar mais atividades, crie uma nova pasta (ex.: <code>EX05/</code>) com um <code>index.html</code> e adicione um novo <code>article.card</code> dentro do carrossel.
         </p>
       </footer>
     </main>
+
 
     <script>
       const themeToggle = document.getElementById("themeToggle");
@@ -189,9 +192,8 @@
         setTheme(current === "dark" ? "light" : "dark");
       });
 
-      // Busca
+      // Busca (filtra cards do carrossel)
       const search = document.getElementById("search");
-      const cards = Array.from(document.querySelectorAll(".card"));
       const resultsInfo = document.getElementById("resultsInfo");
 
       function normalize(s) {
@@ -201,17 +203,97 @@
           .replace(/\p{Diacritic}/gu, "");
       }
 
+      const carouselTrack = document.getElementById("carouselTrack");
+      const carouselDots = document.getElementById("carouselDots");
+      const allSlides = Array.from(document.querySelectorAll(".card--slide"));
+      let slides = [];
+      let currentIndex = 0;
+      let autoTimer = null;
+      let autoplayMs = 4500;
+
+      function clampIndex(i, len) {
+        return Math.max(0, Math.min(i, len - 1));
+      }
+
+      function getSlideWidth() {
+        const viewport = carouselTrack.parentElement;
+        return viewport.getBoundingClientRect().width;
+      }
+
+      function setTrackTransform(index, withTransition = true) {
+        const w = getSlideWidth();
+        const x = index * (w + 14); // 14px gap (ver CSS)
+        if (!withTransition) carouselTrack.classList.add("no-transition");
+        else carouselTrack.classList.remove("no-transition");
+        carouselTrack.style.transform = `translate3d(${-x}px, 0, 0)`;
+      }
+
+      function buildDots() {
+        carouselDots.innerHTML = "";
+        slides.forEach((_, i) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "carousel__dot";
+          b.setAttribute("aria-label", `Ir para atividade ${i + 1}`);
+          b.setAttribute("aria-current", i === currentIndex ? "true" : "false");
+          b.addEventListener("click", () => {
+            currentIndex = i;
+            setTrackTransform(currentIndex);
+            updateDots();
+            restartAutoplay();
+          });
+          carouselDots.appendChild(b);
+        });
+      }
+
+      function updateDots() {
+        const dotButtons = Array.from(carouselDots.querySelectorAll(".carousel__dot"));
+        dotButtons.forEach((dot, i) => {
+          dot.setAttribute("aria-current", i === currentIndex ? "true" : "false");
+        });
+      }
+
+      function syncSlidesAndCarousel() {
+        // remove/disable slides que não batem na busca
+        slides = allSlides.filter((s) => s.style.display !== "none");
+        if (!slides.length) {
+          currentIndex = 0;
+          carouselDots.innerHTML = "";
+          carouselTrack.style.transform = "translate3d(0,0,0)";
+          return;
+        }
+        currentIndex = clampIndex(currentIndex, slides.length);
+
+        buildDots();
+        updateDots();
+
+        // aplica posição atual sem transição para evitar "pulo"
+        setTrackTransform(currentIndex, false);
+        requestAnimationFrame(() => setTrackTransform(currentIndex, true));
+      }
+
+
+      function restartAutoplay() {
+        if (autoTimer) clearInterval(autoTimer);
+        if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        autoTimer = setInterval(() => {
+          if (!slides.length) return;
+          currentIndex = (currentIndex + 1) % slides.length;
+          setTrackTransform(currentIndex);
+          updateDots();
+        }, autoplayMs);
+      }
+
       function filterCards() {
         const q = normalize(search.value).trim();
         let shown = 0;
 
-        for (const card of cards) {
+        for (const card of allSlides) {
           const title = normalize(card.dataset.title);
           const tags = normalize(card.dataset.tags);
           const text = normalize(card.textContent);
 
-          const match =
-            !q || title.includes(q) || tags.includes(q) || text.includes(q);
+          const match = !q || title.includes(q) || tags.includes(q) || text.includes(q);
           card.style.display = match ? "" : "none";
           if (match) shown++;
         }
@@ -219,10 +301,81 @@
         resultsInfo.textContent = q
           ? `${shown} resultado(s) para "${search.value}".`
           : "";
+
+        // sincroniza o carrossel com os slides visíveis
+        syncSlidesAndCarousel();
+        restartAutoplay();
       }
 
-      search.addEventListener("input", filterCards);
+      // Carrossel: swipe/teclas
+      function handleKeydown(e) {
+        if (!slides.length) return;
+        if (e.key !== "ArrowLeft" && e.key !== "ArrowRight") return;
+        e.preventDefault();
+        currentIndex = e.key === "ArrowLeft" ? (currentIndex - 1 + slides.length) % slides.length : (currentIndex + 1) % slides.length;
+        setTrackTransform(currentIndex);
+        updateDots();
+        restartAutoplay();
+      }
+      window.addEventListener("keydown", handleKeydown, { passive: false });
+
+      // Resize
+      let resizeT = null;
+      window.addEventListener("resize", () => {
+        if (resizeT) clearTimeout(resizeT);
+        resizeT = setTimeout(() => {
+          if (!slides.length) return;
+          setTrackTransform(currentIndex, false);
+          setTrackTransform(currentIndex, true);
+        }, 100);
+      });
+
+      // init
+      function initCarousel() {
+        // tudo visível por padrão
+        allSlides.forEach((s) => (s.style.display = ""));
+        slides = allSlides.slice();
+        currentIndex = 0;
+        buildDots();
+        setTrackTransform(0, false);
+        updateDots();
+        restartAutoplay();
+
+        // Renderiza lista explicando cada atividade
+        const list = document.getElementById("activityList");
+        if (list) {
+          list.innerHTML = "";
+            const slideCards = allSlides;
+          slideCards.forEach((card) => {
+            const title = card.dataset.title || "Atividade";
+            const h3 = card.querySelector(".card__title");
+            const desc = card.querySelector(".card__desc");
+            const btn = card.querySelector("a.btn");
+            const href = btn ? btn.getAttribute("href") : null;
+            const linkText = btn ? btn.textContent.trim() : "Abrir";
+
+            const li = document.createElement("li");
+            li.innerHTML = `
+              <div class="activity-head">
+                <strong>${title}</strong> — ${h3 ? h3.textContent.trim() : ""}
+                ${href ? `<a class="activity-link" href="${href}">${linkText}</a>` : ""}
+              </div>
+              ${desc ? `<p>${desc.textContent.trim()}</p>` : ""}
+            `;
+            list.appendChild(li);
+          });
+        }
+      }
+
+
+      search.addEventListener("input", () => {
+        // ao filtrar, preserva a interação
+        filterCards();
+      });
+
+      initCarousel();
       filterCards();
     </script>
+
   </body>
 </html>
