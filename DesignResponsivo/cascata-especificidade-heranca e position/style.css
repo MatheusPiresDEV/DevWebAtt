@@ -2,7 +2,7 @@
     --primary-color: #4f46e5;
     --primary-hover: #4338ca;
     --bg-color: #f8fafc;
-    --text-color: #0f172a;
+    --text-color: #ffffff;
     --disabled-bg: #e2e8f0;
     --disabled-text: #94a3b8;
     --radius: 10px;
@@ -18,14 +18,45 @@
 body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
     min-height: 100vh;
-    padding: 40px 20px;
-    background-color: var(--bg-color);
-    color: var(--text-color);
+    overflow-x: hidden;
+    background-color: #0b0f19;
+}
+
+.large-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('demo-1-bg.jpg');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    z-index: 0;
+}
+
+#demo-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    background: transparent;
+}
+
+.content-layer {
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 16px;
+    padding: 40px 20px;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
 }
 
 h1 {
@@ -34,6 +65,12 @@ h1 {
     font-weight: 800;
     letter-spacing: -0.02em;
     text-align: center;
+    color: var(--text-color);
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.7);
+}
+
+.menu-links {
+    pointer-events: auto;
 }
 
 .menu-links ul {
@@ -55,20 +92,20 @@ h1 {
     font-weight: 600;
     border-radius: var(--radius);
     transition: var(--transition);
-    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.18);
+    box-shadow: 0 8px 20px rgba(79, 70, 229, 0.4);
 }
 
 .menu-links a:hover,
 .menu-links a:focus-visible {
     background-color: var(--primary-hover);
     transform: translateY(-2px);
-    box-shadow: 0 14px 34px rgba(79, 70, 229, 0.25);
+    box-shadow: 0 14px 34px rgba(79, 70, 229, 0.6);
     outline: none;
 }
 
 .menu-links a:active {
     transform: translateY(0);
-    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.16);
+    box-shadow: 0 8px 18px rgba(79, 70, 229, 0.2);
 }
 
 .menu-links a.disabled {
@@ -79,8 +116,30 @@ h1 {
     cursor: not-allowed;
 }
 
+.main-title {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    color: #f9f1e9;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+}
+
+.demo-1 .main-title {
+    text-transform: uppercase;
+    font-size: 4.2em;
+    letter-spacing: 0.1em;
+}
+
+.main-title .thin {
+    font-weight: 200;
+}
+
 @media (max-width: 640px) {
-    body {
+    .content-layer {
         padding: 20px;
     }
 
@@ -100,3 +159,8 @@ h1 {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .demo-1 .main-title {
+        font-size: 3em;
+    }
+}
