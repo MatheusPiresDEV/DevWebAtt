@@ -1,0 +1,123 @@
+/* ==========================================
+   CONFIGURAÇÕES GLOBAIS E VARIÁVEIS
+   ========================================== */
+:root {
+    --primary-color: #4f46e5;       /* Azul índigo moderno */
+    --primary-hover: #4338ca;       /* Tom mais escuro para o hover */
+    --bg-color: #f8fafc;            /* Fundo off-white suave */
+    --text-color: #0f172a;          /* Grafite escuro (melhor que preto puro) */
+    --disabled-bg: #e2e8f0;         /* Cinza neutro para desabilitado */
+    --disabled-text: #94a3b8;       /* Texto desabilitado */
+    --radius: 8px;                  /* Bordas arredondadas mais modernas */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); /* Transição suave e natural */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Font-family moderna utilizando as fontes nativas do sistema */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    min-height: 100vh;
+    padding: 40px 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
+    /* Centralização perfeita na tela */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================
+   TIPOGRAFIA
+   ========================================== */
+h1 {
+    margin-bottom: 32px;
+    font-size: 2rem; /* Usando rem para melhor acessibilidade */
+    font-weight: 700;
+    letter-spacing: -0.025em;
+    text-align: center;
+}
+
+/* ==========================================
+   MENU / LINKS
+   ========================================== */
+.menu-links ul {
+    list-style: none;
+    display: flex;
+    gap: 16px; /* Espaçamento moderno entre os itens sem precisar de margin-bottom */
+    flex-wrap: wrap; /* Permite quebrar linha em telas pequenas */
+    justify-content: center;
+}
+
+.menu-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    border-radius: var(--radius);
+    transition: var(--transition);
+    
+    /* Sombra sutil inicial */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Efeito de Hover e Foco (Acessibilidade) */
+.menu-links a:hover, 
+.menu-links a:focus-visible {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px); /* Efeito de "levitar" */
+    
+    /* Sombra mais pronunciada no hover */
+    box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.3), 0 4px 6px -4px rgba(79, 70, 229, 0.3);
+    outline: none;
+}
+
+/* Efeito de clique (Active) */
+.menu-links a:active {
+    transform: translateY(0);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+/* Estado Desabilitado */
+.menu-links a.disabled {
+    background-color: var(--disabled-bg);
+    color: var(--disabled-text);
+    pointer-events: none;
+    box-shadow: none;
+    cursor: not-allowed;
+}
+
+/* ==========================================
+   RESPONSIVIDADE (MOBILE)
+   ========================================== */
+@media (max-width: 640px) {
+    body {
+        padding: 20px;
+    }
+
+    /* Em telas de celular, os botões empilham e ocupam a largura total disponível */
+    .menu-links ul {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px; /* Evita que o botão fique gigante em telas médias */
+    }
+
+    .menu-links li {
+        width: 100%;
+    }
+
+    .menu-links a {
+        width: 100%;
+        padding: 14px 20px; /* Botões ligeiramente maiores no mobile para facilitar o toque */
+    }
+}
