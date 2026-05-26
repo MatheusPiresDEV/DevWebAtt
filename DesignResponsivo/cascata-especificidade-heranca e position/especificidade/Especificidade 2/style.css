@@ -6,51 +6,53 @@
 
 body {
     font-family: "Times New Roman", Times, serif;
-    line-height: 1.35;
-    padding: 40px 50px;
+    line-height: 1.2;
+    padding: 50px 55px;
     background-color: #fff;
-    color: #404040;
+    color: #595959;
 }
 
 h1 {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: bold;
     color: #000;
-    margin-bottom: 30px;
-    font-family: "Times New Roman", Times, serif;
+    margin-bottom: 45px;
 }
 
 .content {
-    max-width: 730px;
+    max-width: 800px;
 }
 
 .content p {
-    font-size: 16px;
-    margin-bottom: 20px;
+    font-size: 20px;
+    margin-bottom: 30px;
     text-align: left;
 }
 
 .content p:nth-child(1),
 .content p:nth-child(4),
 .content p:nth-child(7) {
-    color: #e46c55;
+    font-style: italic;
+    font-size: 28px;
+    margin-bottom: 35px;
+    color: #595959;
 }
 
+.content p:nth-child(1)::first-line,
 .content p:nth-child(2)::first-line,
-.content p:nth-child(3)::first-line,
+.content p:nth-child(4)::first-line,
 .content p:nth-child(5)::first-line,
-.content p:nth-child(6)::first-line,
-.content p:nth-child(8)::first-line,
-.content p:nth-child(9)::first-line {
+.content p:nth-child(7)::first-line,
+.content p:nth-child(8)::first-line {
     color: #e46c55;
 }
 
 .lembrete {
-    margin-top: 40px;
+    margin-top: 20px;
     font-size: 15px;
     color: #000;
 }
 
 .lembrete p {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
 }
