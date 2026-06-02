@@ -3,111 +3,113 @@ console.log(a.textContent);
 a.textContent = "Texto";
 console.log(a.textContent);
 
-const b = document.querySelectorAll(".info-nome");
+const tabelaPacientes = document.querySelector("#tabela-pacientes");
+const formAdiciona = document.querySelector("#form-adiciona");
+const pacienteTemplate = document.querySelector(".paciente");
 
-const c = document.querySelectorAll(".info-peso");
-
-const d = document.querySelectorAll(".info-altura");
-
-const e = document.querySelectorAll(".info-imc");
-
-console.log(`${e.textContent} ${c.textContent} ${d.textContent}`);
-
-if(c <= 0 || c > 635){
-    console.log("Peso Ínvalido");
+function validaPeso(peso) {
+    return Number.isFinite(peso) && peso > 0 && peso <= 635;
 }
-else if(d < 0.57 || d > 2.72){
-    console.log("Altura Ínvalido");
+
+function validaAltura(altura) {
+    return Number.isFinite(altura) && altura >= 0.57 && altura <= 2.72;
 }
-else{
-    e.forEach((x, i) => {
-        x[i] = Number(c[i].textContent/Math.pow(d[i].textContent,2)).toFixed(2);
-        console.log(x[i]);
-        e[i].textContent = x[i];
+
+function calculaImc(peso, altura) {
+    return (peso / Math.pow(altura, 2)).toFixed(2);
+}
+
+function atualizaImcsExistentes() {
+    const pacientes = document.querySelectorAll(".paciente");
+
+    pacientes.forEach((paciente) => {
+        const pesoCell = paciente.querySelector(".info-peso");
+        const alturaCell = paciente.querySelector(".info-altura");
+        const imcCell = paciente.querySelector(".info-imc");
+
+        const peso = Number(pesoCell.textContent);
+        const altura = Number(alturaCell.textContent);
+
+        if (!validaPeso(peso)) {
+            imcCell.textContent = "Peso inválido";
+            paciente.classList.add("paciente-invalido");
+            return;
+        }
+
+        if (!validaAltura(altura)) {
+            imcCell.textContent = "Altura inválida";
+            paciente.classList.add("paciente-invalido");
+            return;
+        }
+
+        imcCell.textContent = calculaImc(peso, altura);
     });
 }
 
-const f = document.querySelector("#tabela-pacientes");
-const g = document.querySelector("#form-adiciona");
-const h = document.querySelector(".paciente");
+function criaPaciente({ nome, peso, altura, gordura, imc }) {
+    const paciente = pacienteTemplate.cloneNode(true);
 
+    paciente.querySelector(".info-nome").textContent = nome;
+    paciente.querySelector(".info-peso").textContent = peso;
+    paciente.querySelector(".info-altura").textContent = altura;
+    paciente.querySelector(".info-gordura").textContent = gordura;
+    paciente.querySelector(".info-imc").textContent = imc;
 
-function funcao1({nome, peso, altura, gordura, imc}){
-    const j = h.cloneNode(true);
-    const k = j.querySelector(".info-nome");
-    k.textContent = nome;
-    const l = j.querySelector(".info-peso");
-    l.textContent = peso;
-    const m = j.querySelector(".info-altura");
-    m.textContent = altura;
-    const n = j.querySelector(".info-gordura");
-    n.textContent = gordon;
-    const o = j.querySelector(".info-imc");
-    o.textContent = imc;
+    return paciente;
+}
 
-    return j;
-};
+formAdiciona.addEventListener("submit", function (event) {
+    event.preventDefault();
 
-g.addEventListener("submit", function (p) {
-    p.preventDefault();
+    const nome = document.querySelector(".nome").value.trim();
+    const peso = Number(document.querySelector(".peso").value.replace(",", "."));
+    const altura = Number(document.querySelector(".altura").value.replace(",", "."));
+    const gordura = document.querySelector(".gordura").value.trim();
 
-    const q = document.querySelector(".nome").value.trim();
-    const r = Number(document.querySelector(".peso").value);
-    const s = Number(document.querySelector(".altura").value);
-    const t = document.querySelector(".gordura").value.trim();
-    const u = (r/Math.pow(s,2)).toFixed(2);
+    if (!nome || !validaPeso(peso) || !validaAltura(altura) || !gordura) {
+        alert("Valores inseridos inválidos!");
+        return;
+    }
 
-    if (!q || r <= 0 || r > 635 || s < 0.57 || s > 2.72) {alert("Valores inseridos Invalidos!"); return;}
+    const imc = calculaImc(peso, altura);
+    const novoPaciente = criaPaciente({ nome, peso, altura, gordura, imc });
 
-    const v = funcao1({nome: q, peso: r, altura: s, gordura: t, imc: u});
+    tabelaPacientes.appendChild(novoPaciente);
 
-    f.appendChild(v);
+    const dadosArmazenados = localStorage.getItem("dados");
+    const pacientesSalvos = dadosArmazenados ? JSON.parse(dadosArmazenados) : [];
 
-    const w = localStorage.getItem("dados");
-    
-    const y = w ? JSON.parse(w) : [];
-    
-    const z = {
-        nome: q,
-        peso: r,
-        altura: s,
-        gordura: t,
-        imc: u
-    };
+    pacientesSalvos.push({ nome, peso, altura, gordura, imc });
+    localStorage.setItem("dados", JSON.stringify(pacientesSalvos));
 
-    y.push(z);
-
-    console.log(y);
-
-    localStorage.setItem("dados", JSON.stringify(y));
-    
-    g.reset();
-    
+    formAdiciona.reset();
 });
 
+async function carregarPacientesRemotos() {
+    try {
+        const response = await fetch("https://raw.githubusercontent.com/matthewrpereira/pacientes-api/main/pacientes.json");
+        const pacientes = await response.json();
 
-async function funcao2(){
-    try{
-        let coisinha = await fetch("https://raw.githubusercontent.com/matthewrpereira/pacientes-api/refs/heads/main/pacientes.json");
-        let negocio = await coisinha.json();
-        console.log(negocio);
-
-        negocio.forEach((x)=>{
-            const v = funcao1(x);
-            f.appendChild(v);
+        pacientes.forEach((paciente) => {
+            const novoPaciente = criaPaciente(paciente);
+            tabelaPacientes.appendChild(novoPaciente);
         });
-    }
-    catch(parou){
-        console.error("Erro ao carregar os pacientes", parou);
+    } catch (erro) {
+        console.error("Erro ao carregar os pacientes", erro);
     }
 }
-funcao2();
 
-const w = localStorage.getItem("dados");
-if(w){
-    const jumento = JSON.parse(w);
-    jumento.forEach((x) => {
-        const v = funcao1(x);
-        f.appendChild(v);
+function carregarPacientesLocais() {
+    const dados = localStorage.getItem("dados");
+    if (!dados) return;
+
+    const pacientes = JSON.parse(dados);
+    pacientes.forEach((paciente) => {
+        const novoPaciente = criaPaciente(paciente);
+        tabelaPacientes.appendChild(novoPaciente);
     });
 }
+
+atualizaImcsExistentes();
+carregarPacientesLocais();
+carregarPacientesRemotos();
