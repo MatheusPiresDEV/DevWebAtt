@@ -182,12 +182,22 @@ code {
   box-shadow: 0 0 0 4px rgba(127, 174, 183, 0.22);
 }
 
+.hero__links {
+  margin-top: 12px;
+  display: flex;
+}
+
+.hero__repoBtn {
+  width: 100%;
+}
+
 .results-info {
   margin: 10px 0 0;
   color: var(--muted);
   font-size: 13px;
   min-height: 18px;
 }
+
 
 .grid {
   margin: 18px 0 30px;
@@ -331,6 +341,11 @@ code {
   flex: 0 0 100%;
 }
 
+@media (max-width: 699px) {
+  .carousel__track { gap: 12px; padding: 4px; }
+  .card--slide { flex: 0 0 100%; }
+}
+
 @media (min-width: 700px) {
   .card--slide { flex-basis: 50%; }
 }
@@ -338,6 +353,12 @@ code {
 @media (min-width: 1020px) {
   .card--slide { flex-basis: calc(33.333% - 9.333px); }
 }
+
+@media (prefers-reduced-motion: reduce) {
+  .carousel__track { transition: none !important; }
+  .btn { transition: none !important; }
+}
+
 
 .carousel__dots {
   display: flex;

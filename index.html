@@ -56,13 +56,27 @@
               autocomplete="off"
             />
           </label>
+
+          <div class="hero__links">
+            <a
+              class="btn btn--ghost hero__repoBtn"
+              href="https://github.com/MatheusPiresDEV/DevWebAtt.git"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver no GitHub
+            </a>
+          </div>
+
           <p id="resultsInfo" class="results-info" aria-live="polite"></p>
         </div>
+
       </section>
 
-      <section class="carousel" aria-label="Carrossel de atividades">
+        <section class="carousel" aria-label="Carrossel de atividades">
         <div class="carousel__viewport" role="region" aria-roledescription="carrossel" aria-live="polite">
-          <div class="carousel__track" id="carouselTrack">
+          <div class="carousel__track" id="carouselTrack" aria-label="Lista de atividades">
+
             <article class="card card--slide" data-title="EX01" data-tags="semantica headings estrutura acessibilidade" tabindex="0">
               <div class="card__top">
                 <span class="pill">EX01</span>
@@ -146,22 +160,21 @@
                 <a class="btn" href="./DesignResponsivo/cascata-especificidade-heranca%20e%20position/index.html">Abrir índice</a>
               </div>
             </article>
-          </div>
-        </div>
 
-                    <article class="card card--slide" data-title="Js Aula 1" data-tags="Referente a aula 1" tabindex="0">
+            <article class="card card--slide" data-title="Js Aula 1" data-tags="javascript js aula 1 tabela pacientes script form-adiciona" tabindex="0">
               <div class="card__top">
                 <span class="pill pill--alt">JS</span>
                 <span class="status">Concluído</span>
               </div>
               <h3 class="card__title">Primeira aula de JS</h3>
-              <p class="card__desc">Acesse o índice principal com todos os links: cascata, especificidade, responsividade e exemplos com imagens.</p>
+              <p class="card__desc">Manipulação de tabela/pacientes e envio de dados com JavaScript (Aparecida Nutrição).</p>
               <div class="card__actions">
-                <a class="btn" href="./JavaScript Aula 1/index.html">Abrir índice</a>
+                <a class="btn" href="./JavaScript%20Aula%201/index.html">Abrir exercício</a>
               </div>
             </article>
           </div>
         </div>
+
 
         <div class="carousel__dots" id="carouselDots" aria-hidden="true"></div>
 
@@ -177,9 +190,12 @@
 
       <footer class="footer">
         <p>
-          Para adicionar mais atividades, crie uma nova pasta (ex.: <code>EX05/</code>) com um <code>index.html</code> e adicione um novo <code>article.card</code> dentro do carrossel.
+          Para adicionar mais atividades, crie uma nova pasta (ex.: <code>EX05/</code>) com um <code>index.html</code>.
+          Depois, adicione um novo <code>article.card</code> dentro do <code>#carouselTrack</code>, com um link em <code>a.btn</code> e atributos:
+          <code>data-title</code> (nome) e <code>data-tags</code> (palavras para a busca).
         </p>
       </footer>
+
     </main>
 
 
