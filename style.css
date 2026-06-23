@@ -187,17 +187,6 @@ code {
   display: flex;
 }
 
-.hero__repoBtn {
-  width: 100%;
-}
-
-.results-info {
-  margin: 10px 0 0;
-  color: var(--muted);
-  font-size: 13px;
-  min-height: 18px;
-}
-
 
 .grid {
   margin: 18px 0 30px;
